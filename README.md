@@ -71,3 +71,42 @@ Para finalizar con la creación del rol que se utilizará para la función lambd
 
 ![image](https://user-images.githubusercontent.com/37603257/113608921-c5f8eb80-9610-11eb-9088-a9c0fec40b3b.png)
 
+# Funcion LAMBDA
+
+Para la creación de la función lambda, en el Dashboard de AWS se realiza clic en el botón **Lambda**.
+
+![image](https://user-images.githubusercontent.com/37603257/113609895-0a38bb80-9612-11eb-9f76-34be88480b0a.png)
+
+Para crear la función lambda , se realiza clic en el botón **Crear una función**.
+
+![image](https://user-images.githubusercontent.com/37603257/113610288-83381300-9612-11eb-8646-fa577f5742c2.png)
+
+Como nombre de la función lambda que se utilizará, se estableció **convertidor**. En el tiempo de ejecución se pone **Java 8** y se cambiara el rol de ejecución predeterminado, por  Uso de un rol existente, en el cual se selecciona el rol creado anteriormente, llamado **VILLAREP**. Para finalizar con la creación de la función lambda, se procede a realizar clic en el botón Crear una función.
+
+![image](https://user-images.githubusercontent.com/37603257/113610776-30129000-9613-11eb-8745-9ed95cd0b9b3.png)
+
+Para cargar el **.jar** del proyecto creado  se hace clic en el botón Cargar desde, para así seleccionar la opción Archivo .jar.
+
+![image](https://user-images.githubusercontent.com/37603257/113611286-ec6c5600-9613-11eb-87e5-f1113ac7b021.png)
+
+![image](https://user-images.githubusercontent.com/37603257/113611377-0b6ae800-9614-11eb-9ce8-79feae4c2248.png)
+
+En el Dashboard , se hace clic en el botón **Editar** en la opción Configuración del tiempo de ejecución.
+
+![image](https://user-images.githubusercontent.com/37603257/113611515-40773a80-9614-11eb-9ac6-4c0e74bec057.png)
+
+Se escribe en el campo provisto **edu.eci.arep.App.Convertidor::convertidor**, que es la ruta donde se encuentra el método encargado de realizar la respectiva conversión de Fahrenheit a Celsius.
+
+![image](https://user-images.githubusercontent.com/37603257/113611897-c1cecd00-9614-11eb-9e8e-f8aa3bc672e5.png)
+
+Para probar que se está ejecutando dentro del .jar el método convertidor y que si está retornando resultados correctos, se realiza clic primero en el botón Probar.
+
+![image](https://user-images.githubusercontent.com/37603257/113612136-09edef80-9615-11eb-9404-cb5bfb8b6892.png)
+
+Para probarlo, se establece de nombre de la prueba **test**, y se ingresa el valor en Fahrenheit, que en este caso es **320**. Luego, se realiza clic en el botón Invoke (Invocar) para realizar la respectiva invocación.
+
+![image](https://user-images.githubusercontent.com/37603257/113612618-b203b880-9615-11eb-92d7-be5fa1cb7574.png)
+
+La prueba ha sido compilado exitosamente, en la cual se evidencia que el código está retornando el valor correcto, ya que **320** grados Fahrenheit son **160** grados Celsius.
+
+![image](https://user-images.githubusercontent.com/37603257/113612898-0c047e00-9616-11eb-8dd6-e0c40554564a.png)
