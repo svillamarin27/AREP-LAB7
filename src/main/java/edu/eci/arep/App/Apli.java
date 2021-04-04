@@ -1,4 +1,4 @@
-package edu.eci.arep.app;
+package edu.eci.arep.App;
 
 import static spark.Spark.*;
 import spark.Request;
@@ -11,7 +11,7 @@ import java.net.URL;
 import spark.Response;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-public class App {
+public class Apli {
 	public static void main(String[] args) {
 		port(getPort());
 		get("/datos", (req, res) -> inputDataPage(req, res));
@@ -53,9 +53,9 @@ public class App {
                 result = result + cad;
             }
         } catch (MalformedURLException ex) {
-            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Apli.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Apli.class.getName()).log(Level.SEVERE, null, ex);
         }
         return result;
     }
