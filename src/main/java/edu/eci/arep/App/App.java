@@ -1,4 +1,4 @@
-package edu.eci.arep.App;
+package edu.eci.arep.app;
 
 import static spark.Spark.*;
 import spark.Request;
