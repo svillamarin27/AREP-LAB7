@@ -110,3 +110,83 @@ Para probarlo, se establece de nombre de la prueba **test**, y se ingresa el val
 La prueba ha sido compilado exitosamente, en la cual se evidencia que el código está retornando el valor correcto, ya que **320** grados Fahrenheit son **160** grados Celsius.
 
 ![image](https://user-images.githubusercontent.com/37603257/113612898-0c047e00-9616-11eb-8dd6-e0c40554564a.png)
+
+# Creacion API GATEWAY
+
+Primero se ingresa a la Dashboard de AWS, en la cual se realiza clic en el botón API Gateway.
+
+![image](https://user-images.githubusercontent.com/37603257/114425555-cea47100-9b7e-11eb-9956-45227ebaa783.png)
+
+Para crear la API REST y usar la función lambda correspondiente, se realiza clic en el botón **Crear**.
+
+![image](https://user-images.githubusercontent.com/37603257/114426020-41ade780-9b7f-11eb-8d10-0d2421b1884b.png)
+
+Para crear una API completamente nueva, se realiza clic en el botón API nueva, y en la configuración se establece de nombre de la API **mathConverter**, y se selecciona el tipo de enlace como Regional. Luego se realiza clic en el botón Crear API.
+
+![image](https://user-images.githubusercontent.com/37603257/114427503-c0575480-9b80-11eb-89e9-a63b145a6b59.png)
+
+Para crear el método GET en la API, se realiza clic en el botón Acciones, para posteriormente realizar clic en el botón **Crear método**.
+
+![image](https://user-images.githubusercontent.com/37603257/114427833-1926ed00-9b81-11eb-9268-6479ef63f410.png)
+
+Luego se selecciona GET en el menú desplegable.
+
+![image](https://user-images.githubusercontent.com/37603257/114428049-555a4d80-9b81-11eb-9926-f58de9858f5b.png)
+
+Ahora en el tipo de integración se selecciona **Función Lambda**, la región se selecciona la misma región en la que se encuentra AWS, que en este caso es Norte de Virginia, el cual es us-east-1. Luego se selecciona en función lambda la que ha sido creada anteriormente, que es **convertidor**, y se habilita la opción de usar el tiempo de espera predeterminado.
+
+![image](https://user-images.githubusercontent.com/37603257/114428718-255f7a00-9b82-11eb-9d67-3518f68d678a.png)
+
+Luego de concederle el permiso correspondiente a la función lambda, se realiza clic en el botón Solicitud de método.
+
+![image](https://user-images.githubusercontent.com/37603257/114428999-7d967c00-9b82-11eb-98cf-cf5b62e07076.png)
+
+En la sección parámetros de cadenas de consulta de URL, se agrega un nuevo parámetro, en el cual se establece de nombre **value**.
+
+![image](https://user-images.githubusercontent.com/37603257/114429369-ee3d9880-9b82-11eb-8cf4-b39bd04c0775.png)
+
+Ahora se realiza clic en el botón Solicitud de integración para realizar la respectiva integración de la API.
+
+![image](https://user-images.githubusercontent.com/37603257/114429538-1cbb7380-9b83-11eb-9eb0-ae187043d1d8.png)
+
+En el nombre, seleccionamos el que se ha creado anteriormente, que es value, y a value se le agrega su respectivo mapeo.
+
+![image](https://user-images.githubusercontent.com/37603257/114430142-c00c8880-9b83-11eb-8c57-2923fcd54c06.png)
+
+Se edita la plantilla de mapeo
+
+![image](https://user-images.githubusercontent.com/37603257/114431536-378ee780-9b85-11eb-84d5-c414bff9995a.png)
+
+Para probar el correcto funcionamiento de la API, se realiza clic en el botón PRUEBAS.
+
+![image](https://user-images.githubusercontent.com/37603257/114431803-850b5480-9b85-11eb-89ee-0b434a53512b.png)
+
+Para probar directamente la API, se realiza clic en el botón Pruebas para observar si la API está ejecutando correctamente la función lambda.
+
+![image](https://user-images.githubusercontent.com/37603257/114432005-c69bff80-9b85-11eb-83d0-e220cb1ed3e7.png)
+
+Como se observa a continuación, la prueba ha sido exitosa, ya que ha retornado el valor convertido a Celsius, ya que 32 grados Fahrenheit son 0 grados Celsius, demostrando así que la API funciona correctamente.
+
+![image](https://user-images.githubusercontent.com/37603257/114432395-46c26500-9b86-11eb-8aba-6301c8eb042b.png)
+
+Para implementar la API como tal, se realiza clic en el botón Acciones, para posteriormente realizar clic en el botón Implementar la API.
+
+![image](https://user-images.githubusercontent.com/37603257/114432638-88531000-9b86-11eb-9987-e189979be120.png)
+
+En etapa de implementación se selecciona [Nueva etapa]. En nombre de la fase se establece como faren, en descripción de la etapa se establece farentokev.
+
+![image](https://user-images.githubusercontent.com/37603257/114432861-c05a5300-9b86-11eb-9a44-b4cb4be7cc36.png)
+
+Luego de realizar la implementación, se dejan los valores predeterminados que se encuentran a continuación. Para guardar todo lo anteriormente realizado, se realiza clic en el botón Guardar los cambios.
+
+![image](https://user-images.githubusercontent.com/37603257/114433097-09120c00-9b87-11eb-9bc4-b1fe850a67b1.png)
+
+Para probar el funcionamiento de la API con 32 grados Fahrenheit, se ingresa la URL de la API en el navegador, que es: https://y3d1ps1c38.execute-api.us-east-1.amazonaws.com/faren?value=32, añadiéndole al final de la URL ?value=32 para probar con dicho valor. Como se puede observar a continuación, el resultado que retorna la API es correcto, ya que 32 grados Fahrenheit son 0 grados Celsius, demostrando que ya la API funciona correctamente.
+
+![image](https://user-images.githubusercontent.com/37603257/114433829-e2a0a080-9b87-11eb-992f-e6195100c88a.png)
+
+# Autor : Sebastián Camilo Villamarín Rodríguez
+
+# Licencia
+
+Este proyecto esta licenciado bajo la licencia General Public License v3.0, revise el archivo [LICENSE](LICENSE) para más información.
